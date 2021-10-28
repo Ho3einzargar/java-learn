@@ -23,25 +23,3 @@ U();
 
 ////////////////////new
 
-
-// let result = [];   
-
-// async function getUser() {
-//     try{
-//         let response = await fetch('https://api.github.com/users');
-//         result = await response.json();         
-//     }
-//     catch (err){
-//         console.error('error is:', err);
-//     }
-    
-// }
-
-// async function finaluser(){
-//     let user = await getUser();
-//     for(let i=0;i<Object.keys(result).length;i++){
-
-//     }
-
-
-// }
