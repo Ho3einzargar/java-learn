@@ -2,33 +2,23 @@
 
 ///////new
 
+let result = [];   
 
-try {
-alert("hey");
-let url = 'Ho3einz';
-
-let response = await fetch(url);
-
-let commits = await response.json(); 
-
-alert(commits[0].author.login);
+async function U() {
+    try{
+        let response = await fetch('https://api.github.com/users');
+        result = await response.json();        
+        
+        for(let i=0;i<= Object.keys(result).length;i++) {
+            //console.log(result[i].login);
+            document.write(`<a href=${result[i].url}>${result[i].login}</a><br>`);
+            
+            }
+          
+    }
+    catch (err){
+        console.error('error is:', err);
+    }
+    
 }
-catch (err){
-    alert(err);
-
-}
-
-// async function userinfo() {
-//     let url = `https://api.github.com/users/${user}`;
-//     try {
-//         let result = await fetch(url);
-//         let userInfo =  await result.json();
-//         document.write(`<h3> Login: ${userInfo.login}</h3> <br> 
-//                          <strong> Site Admin:</strong> ${userInfo.id}<br> 
-//                          <strong> Node Id: </strong> ${userInfo.node_id}`) ;
-//      } catch (err) {
-//     console.log(err);
-//     }
-//     }
- 
-//    userinfo();
+U();
